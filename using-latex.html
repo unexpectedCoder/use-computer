@@ -1,0 +1,843 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Оформляем тексты в \(\mathrm{\LaTeX}\) &#8212; Use the Computer</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'using-latex';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Установка Cygwin" href="cygwin-install.html" />
+    <link rel="prev" title="Оформляем тексты в MS Word" href="using-word.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Use the Computer - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Use the Computer - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Учимся работать с компьютером
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vscode-python.html">Создаём программы Python в VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-word.html">Оформляем тексты в MS Word</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Оформляем тексты в <span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cygwin-install.html">Установка Cygwin</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/unexpectedCoder/use-computer" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/unexpectedCoder/use-computer/issues/new?title=Issue%20on%20page%20%2Fusing-latex.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/using-latex.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Оформляем тексты в \mathrm{\LaTeX}</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code">Настраиваем VS Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Наш первый текст</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Обзор шаблона документа <span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">См. также</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mathrm-latex">
+<h1>Оформляем тексты в <span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span><a class="headerlink" href="#mathrm-latex" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span> (произносится как “латех” с ударением на “е”) -
+это мощная профессиональная система вёрстки текстовых документов:
+от буклетов до многотомных литературных и академических трудов.
+Пы пишите (можно даже сказать, программируете) текст в файлах
+с форматом <code class="docutils literal notranslate"><span class="pre">.tex</span></code>.
+Затем передаёте эти файлы компилятору латеха
+и на выходе получаете либо DVI, либо PDF файл
+в зависимости от компилятора и его настроек
+(как вы увидите, в этом нет никакой сложности).</p>
+<p>Работу с латехом можно сделать одинаковой в Linux и Windows.
+И мы это сделаем.
+Тогда пользователи Windows будут выполнять те же действия,
+что и линуксоиды, и получать тот же (прекрасный) результат.
+Для этого необходимо немного прокачать Window, а именно,
+установить эмулятор терминала Linux
+<a class="reference external" href="https://www.cygwin.com/">Cygwin</a>.
+Как это сделать, показано на странице
+<a class="reference internal" href="cygwin-install.html"><span class="doc">Установка Cygwin</span></a> по установке самого Cygwin, а также
+библиотек и компиляторов латеха.</p>
+<p>Отныне будем считать, что вы работаете либо в Linux,
+либо в Windows с установленным и настроенным Cygwin.</p>
+<section id="vs-code">
+<h2>Настраиваем VS Code<a class="headerlink" href="#vs-code" title="Link to this heading">#</a></h2>
+<p>Для удобства работы с латехом рекомендуется установить
+следующие расширения для VS Code:</p>
+<ul>
+<li><p>LaTeX Workshop - набор утилит для удобства создания
+файлов <code class="docutils literal notranslate"><span class="pre">.tex</span></code>:</p>
+<p><img alt="" src="_images/latex-vs-code-1.PNG" /></p>
+</li>
+<li><p>Russian - Code Spell Checker (проверка русской орфографии):</p>
+<p><img alt="" src="_images/latex-vs-code-2.PNG" /></p>
+</li>
+</ul>
+</section>
+<section id="id1">
+<h2>Наш первый текст<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Куда же без “Hello, world!”?
+Создадим документ с такой фразой.</p>
+<p>Создайте tex-файл, например, <code class="docutils literal notranslate"><span class="pre">main.tex</span></code>
+и откройте его в VS Code.
+Файлы латеха состоят из двух основных частей:
+<em>преамбулы</em> и <em>основной части</em>.</p>
+<p>Основной текст - это текст, находящийся внутри <em>окружения</em> <code class="docutils literal notranslate"><span class="pre">document</span></code>,
+т.е. между командами</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+
+<span class="c">% Здесь основной текст</span>
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+</div>
+<p>Преамбула - это всё остальное, что находится <strong>перед</strong> командой
+<code class="docutils literal notranslate"><span class="pre">\begin{document}</span></code>, т.е. перед основным текстом.</p>
+<p>Наш хэллоу ворлд будет выглядеть как-то так:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="nb">{</span>report<span class="nb">}</span>      <span class="c">% общий стиль документа - отчёт</span>
+<span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span> <span class="c">% кодировка символов</span>
+
+<span class="c">% Конец преамбулы.</span>
+<span class="c">% Начало основного текста</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+
+Hello, world!
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+</div>
+<p>Настало время компилировать.
+Открываем терминал (для пользователей Windows это означает
+“открыть Cygwin”) и переходим в директорию с нашим файлом.
+Допустим, что файл в Windows находится по пути
+<code class="docutils literal notranslate"><span class="pre">E:\tex-examples\hello.tex</span></code>.
+Для этого даём команды:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>e:
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>tex-examples
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>В Linux пути отличаются.
+Однако с большой долей вероятностью пользователи Linux
+с лёгкостью перенесут эти инструкции на свои пути.</p>
+</div>
+<p>Перешли в директорию. Компилируем:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pdflatex<span class="w"> </span>hello.tex
+</pre></div>
+</div>
+<p>Готово!
+В той же директории вы получите одноимённый файл PDF (<code class="docutils literal notranslate"><span class="pre">hello.pdf</span></code>).
+Откройте его - и вы увидите приветствие миру.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Существует множество компиляторов <span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span>:
+<code class="docutils literal notranslate"><span class="pre">pdflatex</span></code>, <code class="docutils literal notranslate"><span class="pre">xelatex</span></code>, <code class="docutils literal notranslate"><span class="pre">latex</span></code> и многие другие.
+Если бы мы заменили <code class="docutils literal notranslate"><span class="pre">pdflatex</span></code>, например, на <code class="docutils literal notranslate"><span class="pre">latex</span></code>,
+то на выходе получили бы файл формата DVI.</p>
+</div>
+<p>Вот и всё! Всего-то!
+<em>Но есть нюанс…</em>
+Реальность сложнее.
+Например, мы не можем пока создать документ с русским языком
+(вернее, с кириллическим шрифтом).
+Нужно также уметь настраивать геометрию страниц, размер шрифта,
+стиль математических формул, таблиц, рисунков
+и так далее и тому подобное.
+В данном пособии эти вопросы подробно не рассматриваются.
+Всю необходимую информацию вы найдёте в интернете и в литературе,
+к примеру, в следующих книгах
+(расположены в порядке убывания первоочерёдности):</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://elitagroup.ru/content/school/web/20170130/Latex_rus.pdf">“<span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span> по-русски”</a> Котельникова;</p></li>
+<li><p><a class="reference external" href="https://mccme.ru/free-books/llang/newllang.pdf">“Набор и вёрстка в системе <span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span>”</a> Львовского;</p></li>
+<li><p><a class="reference external" href="https://ctan.math.washington.edu/tex-archive/info/russian/basiclatex-ru/BasicLatex.pdf">“Основы <span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span>”</a>. Учебное пособие Кузнецова.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Этой литературы в большинстве случаев оказывается достаточно,
+чтобы за пару дней освоить <span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span>
+на уровне оформления диплома.
+Не нужно читать книги полностью и последовательно.
+Достаточно прочитать разделы с основами создания документов,
+а остальные разделы, где подробно рассматривается какой-либо
+функционал, просматривать по мере необходимости.</p>
+</div>
+<p>В следующем разделе рассмотрим более сложный пример
+<span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span>-файла,
+содержащего шаблон оформления домашнего задания.</p>
+</section>
+<section id="id2">
+<h2>Обзор шаблона документа <span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Шаблоны текстовых документов,
+оформляемых студентами МГТУ им. Н.Э. Баумана,
+вы найдёте в <a class="reference external" href="https://github.com/unexpectedCoder/latex-bmstu-templates">этом репозитории</a>.
+Скачайте его себе, например, как zip-архив:</p>
+<p><img alt="" src="_images/latex-templates-git.PNG" /></p>
+<p>Для примера рассмотрим содержимое файла <code class="docutils literal notranslate"><span class="pre">homework.tex</span></code> -
+шаблона домашнего задания.
+Пойдём по небольшим частям.
+Для начала рассмотрим преамбулу.</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">%%% homework.tex %%%</span>
+<span class="c">% Класс документа - расширенный отчёт</span>
+<span class="k">\documentclass</span><span class="na">[14pt, a4paper]</span><span class="nb">{</span>extreport<span class="nb">}</span>
+<span class="c">% Кодировка UTF-8</span>
+<span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+<span class="c">% Подключаем кириллицу</span>
+<span class="k">\usepackage</span><span class="na">[T2A]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+<span class="c">% Подключаем стиль для английского и русского текста</span>
+<span class="k">\usepackage</span><span class="na">[english, russian]</span><span class="nb">{</span>babel<span class="nb">}</span>
+ <span class="c">% Делаем заголовок &quot;Содержание&quot; для содержания</span>
+ <span class="c">% вместо &quot;Оглавления&quot; по умолчанию,</span>
+ <span class="c">% выравнивая по центру</span>
+ <span class="k">\addto\captionsrussian</span><span class="nb">{</span>
+  <span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\contentsname</span><span class="nb">}</span>
+    <span class="nb">{</span><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+        <span class="k">\bfseries\large</span> Содержание
+    <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}}</span>
+ <span class="nb">}</span>
+</pre></div>
+</div>
+<p>Продолжаем настройку.
+Настроим абзацы, шрифты, геометрию страниц:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">% Первый абзац после заголовка - с красной строки</span>
+<span class="c">% (у англичан первый абзац не имеет отступа)</span>
+<span class="k">\usepackage</span><span class="nb">{</span>indentfirst<span class="nb">}</span>
+<span class="c">% Пакет для оформления математических формул</span>
+<span class="k">\usepackage</span><span class="na">[intlimits, sumlimits]</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+<span class="c">% Пакет с греческими буквами прямого начертания</span>
+<span class="c">% (как принято в отечественной печати)</span>
+<span class="k">\usepackage</span><span class="nb">{</span>upgreek<span class="nb">}</span>
+<span class="c">% Современный шрифт для математики</span>
+<span class="k">\usepackage</span><span class="nb">{</span>newtxmath<span class="nb">}</span>
+<span class="c">% Пакет для работы с таблицами</span>
+<span class="k">\usepackage</span><span class="nb">{</span>tabularx<span class="nb">}</span>
+</pre></div>
+</div>
+<p>Настраиваем геометрию страниц:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">% Настраиваем геометрию страниц:</span>
+<span class="k">\usepackage</span><span class="nb">{</span>geometry<span class="nb">}</span>
+ <span class="k">\geometry</span><span class="nb">{</span>
+    includefoot,
+    footskip=1cm,
+    left=3cm,
+    top=1.5cm,
+    right=1cm,
+    bottom=1.5cm
+ <span class="nb">}</span>
+</pre></div>
+</div>
+<p>Далее - мелочи:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">% Для настройки межстрочного интервала</span>
+<span class="k">\usepackage</span><span class="nb">{</span>setspace<span class="nb">}</span>
+<span class="c">% Для настройки стилей заголовков</span>
+<span class="k">\usepackage</span><span class="nb">{</span>titlesec<span class="nb">}</span>
+<span class="c">% Для табуляций</span>
+<span class="k">\usepackage</span><span class="nb">{</span>tabto<span class="nb">}</span>
+<span class="c">% Для работы с рисунками</span>
+<span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+ <span class="c">% Директория с картинками</span>
+ <span class="k">\graphicspath</span><span class="nb">{{</span>./images/<span class="nb">}}</span>
+<span class="c">% Для работы с многофайловым проектом</span>
+<span class="k">\usepackage</span><span class="nb">{</span>subfiles<span class="nb">}</span>
+<span class="c">% Для подсчёта суммарного числа страниц</span>
+<span class="k">\usepackage</span><span class="nb">{</span>totpages<span class="nb">}</span>
+<span class="c">% Булева логика (программирование)</span>
+<span class="k">\usepackage</span><span class="nb">{</span>ifthen<span class="nb">}</span>
+</pre></div>
+</div>
+<p>Далее создаётся шаблон титульной страницы.
+Опустим его разбор.
+Вы легко с ним разберётесь, как только познаете основы
+<span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span>.</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">% Величина отступа (красной строки)</span>
+<span class="k">\setlength\parindent</span><span class="nb">{</span>1.25cm<span class="nb">}</span>
+<span class="c">% Настраиваем стили заголовков</span>
+<span class="k">\titleformat*</span><span class="nb">{</span><span class="k">\section</span><span class="nb">}{</span><span class="k">\large\bfseries</span><span class="nb">}</span>
+<span class="k">\titlespacing*</span><span class="nb">{</span><span class="k">\section</span><span class="nb">}{</span>1.25cm<span class="nb">}{</span>6pt<span class="nb">}{</span>6pt<span class="nb">}</span>
+<span class="k">\titleformat*</span><span class="nb">{</span><span class="k">\subsection</span><span class="nb">}{</span><span class="k">\normalsize\bfseries</span><span class="nb">}</span>
+<span class="k">\titlespacing*</span><span class="nb">{</span><span class="k">\subsection</span><span class="nb">}{</span>1.25cm<span class="nb">}{</span>6pt<span class="nb">}{</span>6pt<span class="nb">}</span>
+
+<span class="c">% Делаем чистовик, в не черновик (\fussy)</span>
+<span class="k">\sloppy</span>
+</pre></div>
+</div>
+<p>Переходим к основной части документа:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+
+<span class="c">% Внесите информацию для формирования титульного листа</span>
+<span class="k">\TitlePage</span>
+<span class="nb">{</span>Дисциплина<span class="nb">}</span>
+<span class="nb">{</span>Тема<span class="nb">}</span>
+<span class="nb">{</span>7<span class="nb">}</span>                     <span class="c">% вариант</span>
+<span class="nb">{</span>СМ6-113<span class="nb">}</span>               <span class="c">% группа</span>
+<span class="nb">{</span>И.Р.~Иванов-Римский<span class="nb">}</span>   <span class="c">% и.о. фамилия студента</span>
+<span class="nb">{</span>П.П.~Петров<span class="nb">}</span>           <span class="c">% и.о. фамилия преподавателя</span>
+
+<span class="c">% Настроили межстрочный интервал</span>
+<span class="k">\setstretch</span><span class="nb">{</span>1.5<span class="nb">}</span>
+
+<span class="c">% Создаём новую команду:</span>
+<span class="c">% содержание будет отображено автоматически,</span>
+<span class="c">% если объём работы превысит 10 страниц</span>
+<span class="k">\newcommand\ConditionalTOC</span><span class="nb">{</span>
+  <span class="k">\ifthenelse</span><span class="nb">{</span><span class="k">\pageref</span><span class="nb">{</span>LastPage<span class="nb">}</span> &gt; 10<span class="nb">}{</span>
+    <span class="k">\tableofcontents</span>
+    <span class="k">\clearpage</span>
+  <span class="nb">}{}</span>
+<span class="nb">}</span>
+
+<span class="c">% Вызываем функцию условного отображения содержания</span>
+<span class="k">\ConditionalTOC</span>
+
+<span class="c">% Отключаем нумерацию разделов</span>
+<span class="k">\setcounter</span><span class="nb">{</span>secnumdepth<span class="nb">}{</span>0<span class="nb">}</span>
+
+<span class="c">% Разделы ДЗ:</span>
+<span class="c">% ваша задача - описать решение ДЗ в трёх нижеследующих файлах</span>
+<span class="c">% (подробности см. в указанных файлах)</span>
+<span class="k">\subfile</span><span class="nb">{</span>homework/1<span class="nb">_</span>task<span class="nb">}</span>
+<span class="k">\subfile</span><span class="nb">{</span>homework/2<span class="nb">_</span>method<span class="nb">}</span>
+<span class="k">\subfile</span><span class="nb">{</span>homework/3<span class="nb">_</span>results<span class="nb">}</span>
+
+<span class="c">% Метка последней страницы, чтобы достать её номер</span>
+<span class="k">\label</span><span class="nb">{</span>LastPage<span class="nb">}</span>
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+</div>
+<p><strong>Хорошая новость</strong> в том,
+что <strong>вам не нужно ничего менять в данном файле</strong>.
+Всё, что от вас требуется - передать необходимые аргументы
+функции <code class="docutils literal notranslate"><span class="pre">\TitlePage</span></code> для генерации титульной страницы.</p>
+<p>Ваша основная работа (написание отчёта по той или иной работе)
+заключается в написании текста в файлах разделов.
+Это те файлы, что переданы функции <code class="docutils literal notranslate"><span class="pre">\subfile</span></code>.
+Например, для ДЗ эти файлы лежат в директории <code class="docutils literal notranslate"><span class="pre">homework/</span></code>,
+для лабораторной работы - в директории <code class="docutils literal notranslate"><span class="pre">lab/</span></code>.
+Вы просто пишите то, что считаете нужным написать в файлах разделов,
+включая таблицы, рисунки, формулы и прочее.
+И затем тем же самым образом компилируете итоговый файл:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pdflatex<span class="w"> </span>homework.tex
+</pre></div>
+</div>
+<p>или для отчёта по лабораторной работе:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pdflatex<span class="w"> </span>lab.tex
+</pre></div>
+</div>
+<p>При этом в <em>субфайлах</em> нет необходимости снова подключать какие-либо
+пакеты - все они уже подключены в основном файле.
+Всё же и субфайлы имеют определённую строгую структуру.
+Для примера рассмотрим файл <code class="docutils literal notranslate"><span class="pre">homework/1_task.tex</span></code>:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">%%% homework/1_task.tex %%%</span>
+<span class="c">% Преамбула субфайла:</span>
+<span class="c">% указываем главный файл</span>
+<span class="k">\documentclass</span><span class="na">[../homework.tex]</span><span class="nb">{</span>subfiles<span class="nb">}</span>
+ <span class="c">% указываем директорию картинок</span>
+ <span class="k">\graphicspath</span><span class="nb">{{</span><span class="k">\subfix</span><span class="nb">{</span>../images/<span class="nb">}}}</span>
+<span class="c">% Конец преамбулы</span>
+
+<span class="c">% Начало основной части</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+
+<span class="c">% Заголовок раздела</span>
+<span class="k">\section</span><span class="nb">{</span>Задание<span class="nb">}</span>
+<span class="c">% Здесь описываете вашу задачу ДЗ</span>
+<span class="c">% ...</span>
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+</div>
+<p>Преамбула всех субфайлов, как правило, одинакова.</p>
+</section>
+<section id="id3">
+<h2>См. также<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://elitagroup.ru/content/school/web/20170130/Latex_rus.pdf">“<span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span> по-русски”</a> Котельникова.</p></li>
+<li><p><a class="reference external" href="https://mccme.ru/free-books/llang/newllang.pdf">“Набор и вёрстка в системе <span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span>”</a> Львовского.</p></li>
+<li><p><a class="reference external" href="https://ctan.math.washington.edu/tex-archive/info/russian/basiclatex-ru/BasicLatex.pdf">“Основы <span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span>”</a>. Учебное пособие Кузнецова.</p></li>
+<li><p><a class="reference external" href="https://www.cygwin.com/">Cygwin</a> - Unix-подобная среда для Windows.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="using-word.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Оформляем тексты в MS Word</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="cygwin-install.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Установка Cygwin</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code">Настраиваем VS Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Наш первый текст</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Обзор шаблона документа <span class="math notranslate nohighlight">\(\mathrm{\LaTeX}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">См. также</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vadim Fedulov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
