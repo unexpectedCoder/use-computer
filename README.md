@@ -5,3 +5,5 @@
 по созданию программ на языке Python.
 
 Используемый текстовый редактор - Visual Studio Code.
+
+Пособие доступно по ссылке: https://unexpectedcoder.github.io/use-computer/intro.html.
