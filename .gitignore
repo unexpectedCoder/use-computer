@@ -1,0 +1,6 @@
+.*
+!.gitignore
+__*__/
+_build/
+*.aux
+*.log

@@ -1,0 +1,10 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: vscode-python
+- file: using-word
+- file: using-latex
+- file: cygwin-install
